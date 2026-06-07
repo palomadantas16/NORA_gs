@@ -30,18 +30,39 @@
     </header>
     
     <main>
-        <div class="quiz">
-            <h2 id="pergunta">Pergunta</h2>
-            <div id="resp-buttons">
-                <button class="btn">Resposta 1</button>
-                <button class="btn">Resposta 2</button>
-                <button class="btn">Resposta 3</button>
-                <button class="btn">Resposta 4</button>
+        <div class="stats-bar">
+            <div class="stat">
+                <strong>3 anos</strong>
+                <span>Duração da missão</span>
             </div>
-
-            <button id="prox-btn">Próxima</button>
-
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <strong>8.000 kg</strong>
+                <span>Alimentos protegidos</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <strong>+200 kg</strong>
+                <span>Peso adicional</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <strong>2,4%</strong>
+                <span>Impacto no peso total</span>
+            </div>
         </div>
+        <section class="section" id="text-quiz">
+            <div class="text">
+                <h2>Pronto para o desafio?</h2>
+                <p>Teste seus conhecimentos sobre o projeto NORA!</p>
+                <button id="iniciar-btn">Iniciar Quiz</button>
+                <div id="quiz-container" style="display: none;">
+                    <h2 id="pergunta">Pergunta</h2>
+                        <div id="resp-buttons"></div>
+                        <button class="btn" id="prox-btn">Próxima</button>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer></footer>

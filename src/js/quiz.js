@@ -132,6 +132,8 @@ let perguntaAtualIndex = 0;
 let resultado = 0;
 
 function inicioQuiz(){
+    document.getElementById('quiz-container').style.display = 'block'; // ← faltava
+    document.getElementById('iniciar-btn').style.display = 'none';     // ← faltava
     perguntaAtualIndex = 0;
     resultado = 0;
     proxButton.innerHTML = "Próxima";
@@ -188,14 +190,13 @@ proxButton.addEventListener('click', () => {
     }
 })
 
-function tratarProxButton(){
-    perguntaAtualIndex++;
-    if(perguntaAtualIndex < perguntas.length){
-        mostrarPergunta();
-    }else{
-        mostrarResultado();
+proxButton.addEventListener('click', () => {
+    if(proxButton.innerHTML === 'Jogar Novamente'){
+        inicioQuiz();
+    } else {
+        tratarProxButton();
     }
-}
+})
 
 function mostrarResultado(){
     resetEstado();
@@ -204,4 +205,4 @@ function mostrarResultado(){
     proxButton.style.display = 'block';
 }
 
-inicioQuiz();
+document.getElementById('iniciar-btn').addEventListener('click', inicioQuiz);
