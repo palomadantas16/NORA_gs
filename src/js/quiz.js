@@ -182,13 +182,14 @@ function selectResposta(e){
     proxButton.style.display = 'block';
 }
 
-proxButton.addEventListener('click', () => {
+function tratarProxButton(){
+    perguntaAtualIndex++;
     if(perguntaAtualIndex < perguntas.length){
-        tratarProxButton();
-    }else{
-        inicioQuiz();
+        mostrarPergunta();
+    } else {
+        mostrarResultado();
     }
-})
+}
 
 proxButton.addEventListener('click', () => {
     if(proxButton.innerHTML === 'Jogar Novamente'){
@@ -196,12 +197,12 @@ proxButton.addEventListener('click', () => {
     } else {
         tratarProxButton();
     }
-})
+});
 
 function mostrarResultado(){
     resetEstado();
     perguntaElement.innerHTML = `Você acertou ${resultado} de ${perguntas.length}!`;
-    proxButton.innerHTML = `Jogar Novamente`;
+    proxButton.innerHTML = 'Jogar Novamente';
     proxButton.style.display = 'block';
 }
 
