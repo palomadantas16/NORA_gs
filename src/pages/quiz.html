@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <title>NORA | Quiz</title>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    <nav id="navbar">
+        <div class="logo">N<span>O</span>RA</div>
+        <ul>
+            <li><a href="../../index.html">Início</a></li>
+            <li><a href="#">Quiz</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+    
+    <header>
+        <div class="header-content">
+            <p class="title1">Missão Espacial · Segurança Alimentar</p>
+            <h1>NORA</h1>
+            <h2>Nutrição Orbital Resistente Ativa</h2>
+            <p>A cápsula inteligente que preserva nutrientes em missões espaciais de longa duração, protegendo os astronautas por toda a jornada até Marte.</p>
+            <a href="../../index.html" class="btn">Conheça o Projeto</a>
+        </div>
+    </header>
+    
+    <main>
+        <div class="stats-bar">
+            <div class="stat">
+                <strong>3 anos</strong>
+                <span>Duração da missão</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <strong>8.000 kg</strong>
+                <span>Alimentos protegidos</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <strong>+200 kg</strong>
+                <span>Peso adicional</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <strong>2,4%</strong>
+                <span>Impacto no peso total</span>
+            </div>
+        </div>
+        <section class="section" id="text-quiz">
+            <div class="text">
+                <h2>Pronto para o desafio?</h2>
+                <p>Teste seus conhecimentos sobre o projeto NORA!</p>
+                <button id="iniciar-btn">Iniciar Quiz</button>
+                <div id="quiz-container" style="display: none;">
+                    <h2 id="pergunta">Pergunta</h2>
+                        <div id="resp-buttons"></div>
+                        <button class="btn" id="prox-btn">Próxima</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="../js/quiz.js"></script>
+</body>
+</html>
