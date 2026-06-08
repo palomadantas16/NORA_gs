@@ -27,7 +27,7 @@ navUl.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => navUl.classList.remove('open'));
 });
 
-// mudança de cor background
+// mudança de cor da página 
 function mudarFundo(cor){
     document.body.style.background=cor;
 }
