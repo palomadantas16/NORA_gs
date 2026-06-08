@@ -27,99 +27,150 @@ navUl.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => navUl.classList.remove('open'));
 });
 
+// mudança de cor da página 
+function mudarFundo(cor){
+    document.body.style.background=cor;
+}
+
+// dropdown tema
+const dropdown = document.querySelector('.dropdown');
+dropdown.addEventListener('click', (e) => {
+    e.stopPropagation();
+    dropdown.classList.toggle('open');
+});
+
+/*========================================
+    SlideShow - Carrossel
+==========================================*/
+const imagens = [
+    '../assets/img/slide1.png',
+    '../assets/img/slide2.png',
+    '../assets/img/slide3.png',
+    '../assets/img/slide4.png'
+];
+
+let indice = 0;
+
+function mostrarSlide() {
+    document.getElementById('imagem').src = imagens[indice];
+}
+
+function proximoSlide() {
+    indice++;
+
+    if (indice >= imagens.length) {
+        indice = 0;
+    }
+
+    mostrarSlide();
+}
+
+function voltarSlide() {
+    indice--;
+
+    if (indice < 0) {
+        indice = imagens.length - 1;
+    }
+
+    mostrarSlide();
+}
+
+// Troca automática a cada 7 segundos
+setInterval(proximoSlide, 7000);
+
 /*========================================
     Quiz Dinâmico
 ==========================================*/
 
 const perguntas = [
     {
-        pergunta: 'Pergunta - ',
+        pergunta: 'Segundo o projeto, qual é um dos principais riscos para os alimentos em missões espaciais?',
         respostas: [
-            {id: 1, opcao: 'A - ', correct: false},
-            {id: 2, opcao: 'B - ', correct: false},
-            {id: 3, opcao: 'C - ', correct: true},
-            {id: 4, opcao: 'D - ', correct: false}
+            {id: 1, opcao: 'A - Falta de gravidade', correct: false},
+            {id: 2, opcao: 'B - Radiação cósmica', correct: true},
+            {id: 3, opcao: 'C - Excesso de comunicação', correct: false},
+            {id: 4, opcao: 'D - Velocidade da nave', correct: false}
         ]
     },
     {
-        pergunta: 'Pergunta - ',
+        pergunta: 'Quais fatores podem degradar os nutrientes dos alimentos durante missões espaciais?',
         respostas: [
-            {id: 1, opcao: 'A - ', correct: true},
-            {id: 2, opcao: 'B - ', correct: false},
-            {id: 3, opcao: 'C - ', correct: false},
-            {id: 4, opcao: 'D - ', correct: false}
+            {id: 1, opcao: 'A - Temperatura, umidade, oxigênio e radiação', correct: true},
+            {id: 2, opcao: 'B - Gravidade, internet e motores', correct: false},
+            {id: 3, opcao: 'C - Painéis solares e combustível', correct: false},
+            {id: 4, opcao: 'D - Luzes da cabine e antenas', correct: false}
         ]
     },
     {
-        pergunta: 'Pergunta - ',
+        pergunta: 'Como a NASA classifica o problema da alimentação em missões espaciais de longa duração?',
         respostas: [
-            {id: 1, opcao: 'A - ', correct: false},
-            {id: 2, opcao: 'B - ', correct: false},
-            {id: 3, opcao: 'C - ', correct: false},
-            {id: 4, opcao: 'D - ', correct: true}
+            {id: 1, opcao: 'A - Risco verde', correct: false},
+            {id: 2, opcao: 'B - Risco amarelo', correct: false},
+            {id: 3, opcao: 'C - Risco azul', correct: false},
+            {id: 4, opcao: 'D - Risco vermelho', correct: true}
         ]
     },
     {
-        pergunta: 'Pergunta - ',
+        pergunta: 'Qual material é utilizado na camada de proteção passiva da NORA?',
         respostas: [
-            {id: 1, opcao: 'A - ', correct: false},
-            {id: 2, opcao: 'B - ', correct: true},
-            {id: 3, opcao: 'C - ', correct: false},
-            {id: 4, opcao: 'D - ', correct: false}
+            {id: 1, opcao: 'A - Alumínio', correct: false},
+            {id: 2, opcao: 'B - Titânio', correct: false},
+            {id: 3, opcao: 'C - HDPE', correct: true},
+            {id: 4, opcao: 'D - Fibra de carbono', correct: false}
         ]
     },
     {
-        pergunta: 'Pergunta - ',
+        pergunta: 'Qual sistema é responsável pelo monitoramento da cápsula?',
         respostas: [
-            {id: 1, opcao: 'A - ', correct: false},
-            {id: 2, opcao: 'B - ', correct: true},
-            {id: 3, opcao: 'C - ', correct: false},
-            {id: 4, opcao: 'D - ', correct: false}
+            {id: 1, opcao: 'A - Raspberry Pi', correct: false},
+            {id: 2, opcao: 'B - Arduino', correct: true},
+            {id: 3, opcao: 'C - GPS', correct: false},
+            {id: 4, opcao: 'D - Satélite', correct: false}
         ]
     },
     {
-        pergunta: 'Pergunta - ',
+        pergunta: 'Qual componente é responsável pelo controle térmico da NORA?',
         respostas: [
-            {id: 1, opcao: 'A - ', correct: false},
-            {id: 2, opcao: 'B - ', correct: false},
-            {id: 3, opcao: 'C - ', correct: false},
-            {id: 4, opcao: 'D - ', correct: true}
+            {id: 1, opcao: 'A - Painel térmico', correct: false},
+            {id: 2, opcao: 'B - Ventoinha industrial', correct: false},
+            {id: 3, opcao: 'C - Compressor espacial', correct: false},
+            {id: 4, opcao: 'D - Célula Peltier', correct: true}
         ]
     },
     {
-        pergunta: 'Pergunta - ',
+        pergunta: 'O sistema monitora diversas variáveis. Qual das opções abaixo é uma delas?',
         respostas: [
-            {id: 1, opcao: 'A - ', correct: true},
-            {id: 2, opcao: 'B - ', correct: false},
-            {id: 3, opcao: 'C - ', correct: false},
-            {id: 4, opcao: 'D - ', correct: false}
+            {id: 1, opcao: 'A - Temperatura', correct: true},
+            {id: 2, opcao: 'B - Velocidade orbital', correct: false},
+            {id: 3, opcao: 'C - Quantidade de Vitamina C', correct: false},
+            {id: 4, opcao: 'D - Distância até Marte', correct: false}
         ]
     },
     {
-        pergunta: 'Pergunta - ',
+        pergunta: 'Qual é a função da válvula solenóide presente no projeto?',
         respostas: [
-            {id: 1, opcao: 'A - ', correct: false},
-            {id: 2, opcao: 'B - ', correct: false},
-            {id: 3, opcao: 'C - ', correct: true},
-            {id: 4, opcao: 'D - ', correct: false}
+            {id: 1, opcao: 'A - Resfriar os alimentos', correct: false},
+            {id: 2, opcao: 'B - Produzir oxigênio', correct: false},
+            {id: 3, opcao: 'C - Reinjetar nitrogênio quando necessário', correct: true},
+            {id: 4, opcao: 'D - Detectar radiação', correct: false}
         ]
     },
     {
-        pergunta: 'Pergunta - ',
+        pergunta: 'Qual é uma das vantagens da NORA apresentada no projeto?',
         respostas: [
-            {id: 1, opcao: 'A - ', correct: false},
-            {id: 2, opcao: 'B - ', correct: true},
-            {id: 3, opcao: 'C - ', correct: false},
-            {id: 4, opcao: 'D - ', correct: false}
+            {id: 1, opcao: 'A - Operação totalmente autônoma', correct: true},
+            {id: 2, opcao: 'B - Produção de alimentos', correct: true},
+            {id: 3, opcao: 'C - Propulsão espacial', correct: false},
+            {id: 4, opcao: 'D - Comunicação interplanetária', correct: false}
         ]
     },
     {
-        pergunta: 'Pergunta - ',
+        pergunta: 'Quem pode se beneficiar diretamente da solução NORA?',
         respostas: [
-            {id: 1, opcao: 'A - ', correct: false},
-            {id: 2, opcao: 'B - ', correct: false},
-            {id: 3, opcao: 'C - ', correct: false},
-            {id: 4, opcao: 'D - ', correct: true}
+            {id: 1, opcao: 'A - Astronautas', correct: false},
+            {id: 2, opcao: 'B - Pesquisadores e agências espaciais', correct: false},
+            {id: 3, opcao: 'C - Empresas privadas do setor aeroespacial', correct: false},
+            {id: 4, opcao: 'D - Todas as alternativas', correct: true}
         ]
     }
 ];
