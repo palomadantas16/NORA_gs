@@ -1,0 +1,8 @@
+Equipe Responsável pelo Desenvolvimento do Projeto NORA!
+
+Amanda Lourenço - RM: 572572
+Giovanna Scalzone - RM: 572285
+Nayra Duarte - RM: 573815
+Paloma Dantas - RM: 569995
+
+Link Repositório GitHub: https://github.com/NORA-GlobalSolution/NORA_gs.git

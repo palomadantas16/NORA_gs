@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/quiz.css">
+    <link rel="stylesheet" href="../css/contato.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
-    <title>NORA | Quiz</title>
+    <title>NORA | Contato</title>
 </head>
 <body>
     <div class="stars" id="stars"></div>
@@ -14,8 +14,8 @@
         <div class="logo">N<span>O</span>RA</div>
         <ul>
             <li><a href="../../index.html">Início</a></li>
-            <li><a href="#">Quiz</a></li>
-            <li><a href="./contato.html">Contato</a></li>
+            <li><a href="./quiz.html">Quiz</a></li>
+            <li><a href="#">Contato</a></li>
             <li class="dropdown">
                 <a href="#">Tema</a>
                 <ul class="submenu">
@@ -38,48 +38,56 @@
     </header>
     
     <main>
-        <div class="stats-bar">
-            <div class="stat">
-                <strong>3 anos</strong>
-                <span>Duração da missão</span>
+        <main>
+
+        <section id="contato">
+
+            <div class="contato-header">
+                <h1>ENTRE EM CONTATO</h1>
+                <p>Tem dúvidas ou sugestões sobre o projeto NORA? Mande uma mensagem para a equipe!</p>
             </div>
-            <div class="stat-divider"></div>
-            <div class="stat">
-                <strong>8.000 kg</strong>
-                <span>Alimentos protegidos</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat">
-                <strong>+200 kg</strong>
-                <span>Peso adicional</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat">
-                <strong>2,4%</strong>
-                <span>Impacto no peso total</span>
-            </div>
-        </div>
-        <div class="slideshow">
-            <button class="seta seta-esquerda" onclick="voltarSlide()">&#10094;</button>
-            <img id="imagem" src="../assets/img/slide1.jpeg" alt="slide">
-            <button class="seta seta-direita" onclick="proximoSlide()">&#10095;</button>
-        </div>
-        <section class="section" id="text-quiz">
-            <div class="text">
-                <h2>Pronto para o desafio?</h2>
-                <p>Teste seus conhecimentos sobre o projeto NORA!</p>
-                <button id="iniciar-btn" class="btn">Iniciar Quiz</button>
-            </div>
-            <div id="quiz-container" style="display: none;">
-                <p id="pergunta">Pergunta</p>
-                <div id="resp-buttons"></div>
-                <button class="btn" id="prox-btn">Próxima</button>
-            </div>
-            <div id="resultado" class="resultado-card" style="display: none;">
-                <h3 id="resultado-texto"></h3>
-                <button class="btn" id="reiniciar-btn">Jogar Novamente</button>
+            <div class="contato-container">
+
+                <form class="contato-form" id="form-contato">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" placeholder="Digite seu nome">
+                    <span class="erro" id="erro-nome"></span>
+
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="Digite seu e-mail">
+                    <span class="erro" id="erro-email"></span>
+
+                    <label for="assunto">Assunto</label>
+                    <input type="text" id="assunto" placeholder="Sobre o que deseja falar?">
+                    <span class="erro" id="erro-assunto"></span>
+
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" placeholder="Digite sua mensagem"></textarea>
+                    <span class="erro" id="erro-mensagem"></span>
+
+                    <button type="submit">Enviar mensagem</button>
+                </form>
+
+                <aside class="contato-info">
+                    <h2>Projeto NORA</h2>
+                    <p>Atendimento da equipe para dúvidas, feedbacks e sugestões sobre a cápsula.</p>
+                    <div class="info-item">
+                        <h3>Email</h3>
+                        <p>contato.projetonora@gmail.com</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Telefone</h3>
+                        <p>55 1234-5678</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Redes</h3>
+                        <p>• Instagram - @projeto_nora</p>
+                        <p>• YouTube - Projeto NORA</p>
+                    </div>
+                </aside>
             </div>
         </section>
+    </main>
     </main>
 
     <footer>
@@ -108,6 +116,6 @@
         <p class="footer-copy">© 2026 NORA | Global Solution · FIAP</p>
     </footer>
 
-    <script src="../js/quiz.js"></script>
+    <script src="../js/contato.js"></script>
 </body>
 </html>

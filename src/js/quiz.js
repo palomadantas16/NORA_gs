@@ -43,9 +43,9 @@ dropdown.addEventListener('click', (e) => {
     SlideShow - Carrossel
 ==========================================*/
 const imagens = [
-    '../assets/img/slide1.png',
-    '../assets/img/slide2.png',
-    '../assets/img/slide3.png',
+    '../assets/img/slide1.jpeg',
+    '../assets/img/slide2.jpeg',
+    '../assets/img/slide3.jpeg',
     '../assets/img/slide4.png'
 ];
 
@@ -75,8 +75,8 @@ function voltarSlide() {
     mostrarSlide();
 }
 
-// Troca automática a cada 7 segundos
-setInterval(proximoSlide, 7000);
+// Troca automática a cada 5 segundos
+setInterval(proximoSlide, 5000);
 
 /*========================================
     Quiz Dinâmico
@@ -183,6 +183,7 @@ let perguntaAtualIndex = 0;
 let resultado = 0;
 
 function inicioQuiz(){
+    proxButton.classList.remove('btn-final');
     document.getElementById('quiz-container').style.display = 'block'; // ← faltava
     document.getElementById('iniciar-btn').style.display = 'none';     // ← faltava
     perguntaAtualIndex = 0;
@@ -252,9 +253,18 @@ proxButton.addEventListener('click', () => {
 
 function mostrarResultado(){
     resetEstado();
-    perguntaElement.innerHTML = `Você acertou ${resultado} de ${perguntas.length}!`;
+
+    perguntaElement.innerHTML = `
+        <div class="resultado-final">
+            <h3>Resultado final</h3>
+            <p>Você acertou <strong>${resultado}</strong> de <strong>${perguntas.length}</strong>!</p>
+        </div>
+    `;
+
     proxButton.innerHTML = 'Jogar Novamente';
+    proxButton.classList.add('btn-final');
     proxButton.style.display = 'block';
 }
+
 
 document.getElementById('iniciar-btn').addEventListener('click', inicioQuiz);
