@@ -42,3 +42,47 @@ dropdown.addEventListener('click', (e) => {
 document.addEventListener('click', () => {
     dropdown.classList.remove('open');
 });
+
+// validação formulário
+const form = document.getElementById('form-contato');
+
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    let valido = true;
+
+    const nome = document.getElementById('nome');
+    const email = document.getElementById('email');
+    const assunto = document.getElementById('assunto');
+    const mensagem = document.getElementById('mensagem');
+
+    document.querySelectorAll('.erro').forEach(e => e.textContent = '');
+
+    if(nome.value.trim() === ''){
+        document.getElementById('erro-nome').textContent = 'Por favor, informe seu nome!';
+        valido = false;
+    }
+
+    if(email.value.trim() === ''){
+        document.getElementById('erro-email').textContent = 'Por favor, informe seu e-mail!';
+        valido = false;
+    } else if(!email.value.includes('@') | !email.value.includes('.')){
+        document.getElementById('erro-email').textContent = 'E-mail inválido.';
+        valido = false;
+    }
+
+    if(assunto.value.trim() === ''){
+        document.getElementById('erro-assunto').textContent = 'Por favor, informe o assunto!';
+        valido = false;
+    }
+
+    if(mensagem.value.trim() === ''){
+        document.getElementById('erro-mensagem').textContent = 'Por favor, informe uma mensagem!';
+        valido = false;
+    }
+
+    if(valido){
+        alert('Mensagem enviada com sucesso!');
+        form.reset();
+    }
+});
