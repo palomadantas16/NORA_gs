@@ -3,15 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: 'Poppins', sans-serif;
     background: #050d1a;
     color: rgb(231, 222, 222);
     overflow-x: hidden;
 }
- 
+
 /* estrelinhas */
- 
+
 .stars {
     position: fixed;
     top: 0;
@@ -22,21 +23,26 @@ body {
     z-index: 0;
     overflow: hidden;
 }
- 
+
 .star {
     position: absolute;
     background: white;
     border-radius: 50%;
     animation: twinkle 3s infinite alternate;
 }
- 
+
 @keyframes twinkle {
-    from { opacity: 0.2; }
-    to   { opacity: 1; }
+    from {
+        opacity: 0.2;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
- 
+
 /* menu */
- 
+
 nav {
     position: fixed;
     top: 0;
@@ -51,7 +57,7 @@ nav {
     z-index: 1000;
     transition: .3s;
 }
- 
+
 .logo {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.8rem;
@@ -59,17 +65,17 @@ nav {
     color: white;
     letter-spacing: 4px;
 }
- 
+
 .logo span {
     color: #58c8ff;
 }
- 
+
 nav ul {
     display: flex;
     list-style: none;
     gap: 28px;
 }
- 
+
 nav a {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.7);
@@ -79,11 +85,11 @@ nav a {
     transition: .3s;
     text-transform: uppercase;
 }
- 
+
 nav a:hover {
     color: #58c8ff;
 }
- 
+
 .hamburger {
     display: none;
     font-size: 1.6rem;
@@ -178,12 +184,12 @@ nav a:hover {
 .seta-direita {
     right: 20px;
 }
- 
+
 /* header */
- 
+
 header {
     height: 85vh;
-    background:linear-gradient(135deg, rgba(5, 13, 26, 0.85) 0%, rgba(0, 30, 60, 0.75) 100%), url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564") center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(5, 13, 26, 0.85) 0%, rgba(0, 30, 60, 0.75) 100%), url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564") center/cover no-repeat;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -191,12 +197,12 @@ header {
     position: relative;
     z-index: 1;
 }
- 
+
 .header-content {
     max-width: 620px;
     animation: fadeUp .9s ease both;
 }
- 
+
 .title1 {
     display: inline-block;
     background: rgba(88, 200, 255, 0.12);
@@ -208,7 +214,7 @@ header {
     letter-spacing: 1px;
     margin-bottom: 20px;
 }
- 
+
 .header-content h1 {
     font-family: 'Orbitron', sans-serif;
     font-size: 7rem;
@@ -218,7 +224,7 @@ header {
     text-shadow: 0 0 60px rgba(88, 200, 255, 0.4);
     letter-spacing: 8px;
 }
- 
+
 .header-content h2 {
     font-size: 1rem;
     font-weight: 400;
@@ -227,16 +233,16 @@ header {
     text-transform: uppercase;
     margin: 16px 0 20px;
 }
- 
+
 .header-content p {
     font-size: 1.05rem;
     line-height: 1.9;
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: 35px;
 }
- 
+
 /* barra de informações  */
- 
+
 .stats-bar {
     display: flex;
     justify-content: center;
@@ -249,12 +255,12 @@ header {
     position: relative;
     z-index: 1;
 }
- 
+
 .stat {
     text-align: center;
     padding: 0 50px;
 }
- 
+
 .stat strong {
     display: block;
     font-family: 'Orbitron', sans-serif;
@@ -262,14 +268,14 @@ header {
     color: #58c8ff;
     font-weight: 700;
 }
- 
+
 .stat span {
     font-size: .8rem;
     color: rgba(255, 255, 255, 0.5);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
- 
+
 .stat-divider {
     width: 1px;
     height: 45px;
@@ -277,7 +283,7 @@ header {
 }
 
 /* seções */
- 
+
 .section {
     min-height: 100vh;
     display: flex;
@@ -291,12 +297,12 @@ header {
 }
 
 /* texto */
- 
+
 .text {
     flex: 1;
     max-width: 560px;
 }
- 
+
 .text h2 {
     font-family: 'Orbitron', sans-serif;
     color: white;
@@ -305,19 +311,19 @@ header {
     margin-bottom: 24px;
     line-height: 1.2;
 }
- 
+
 .text p {
     font-size: 1rem;
     line-height: 1.95;
     color: rgba(255, 255, 255, 0.72);
     margin-bottom: 18px;
 }
- 
+
 /*============
     QUIZ
 =============*/
- 
-#quiz-container{
+
+#quiz-container {
     padding: 20px;
     background: rgba(88, 200, 255, 0.04);
     border: 1px solid rgba(88, 200, 255, 0.15);
@@ -328,7 +334,7 @@ header {
     gap: 80px;
 }
 
-#quiz-container .btn{
+#quiz-container .btn {
     width: 90%;
 }
 
@@ -348,22 +354,22 @@ header {
     transition: .3s;
 }
 
-#quiz-container #prox-btn{
+#quiz-container #prox-btn {
     width: 50%;
     margin-top: 16px;
-    background:linear-gradient(135deg, rgba(5, 13, 26, 0.85) 0%, rgba(0, 30, 60, 0.75) 100%), url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564") center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(5, 13, 26, 0.85) 0%, rgba(0, 30, 60, 0.75) 100%), url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564") center/cover no-repeat;
     box-shadow: none;
     border: none;
     display: none;
     cursor: pointer;
 }
- 
+
 .btn:disabled {
     cursor: not-allowed;
 }
 
 .correct {
-    background:rgb(121, 248, 121);
+    background: rgb(121, 248, 121);
 }
 
 .incorrect {
@@ -377,7 +383,7 @@ header {
 
 .resultado-final {
     min-width: 320px;
-    
+
 }
 
 .resultado-final h3 {
@@ -397,7 +403,7 @@ header {
     color: #58c8ff;
 }
 
-.btn-final{
+.btn-final {
     width: 220px !important;
     height: 50px;
     display: grid;
@@ -406,9 +412,9 @@ header {
     font-size: 1rem;
 }
 
- 
+
 /* rodapé */
- 
+
 footer {
     text-align: center;
     padding: 70px 10%;
@@ -417,7 +423,7 @@ footer {
     position: relative;
     z-index: 1;
 }
- 
+
 .footer-logo {
     font-family: 'Orbitron', sans-serif;
     font-size: 2.5rem;
@@ -425,43 +431,43 @@ footer {
     letter-spacing: 6px;
     margin-bottom: 8px;
 }
- 
+
 .footer-logo span {
     color: #58c8ff;
 }
- 
+
 .footer-subtitulo {
-    color: rgba(255,255,255,.35);
+    color: rgba(255, 255, 255, .35);
     font-size: .8rem;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 30px;
 }
- 
+
 .footer-divisao {
     width: 60px;
     height: 2px;
     background: linear-gradient(90deg, transparent, #58c8ff, transparent);
     margin: 0 auto 30px;
 }
- 
+
 footer h3 {
-    color: rgba(255,255,255,.7);
+    color: rgba(255, 255, 255, .7);
     font-size: 1rem;
     font-weight: 500;
     margin-bottom: 24px;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
- 
-.time{
+
+.time {
     display: flex;
     justify-content: center;
     gap: 30px;
     margin-bottom: 40px;
     flex-wrap: wrap;
 }
- 
+
 .membro {
     background: rgba(88, 200, 255, 0.06);
     border: 1px solid rgba(88, 200, 255, 0.15);
@@ -470,38 +476,39 @@ footer h3 {
     min-width: 140px;
     transition: .3s;
 }
- 
+
 .membro:hover {
     background: rgba(88, 200, 255, 0.12);
     transform: translateY(-4px);
 }
- 
+
 .membro span {
     font-size: 1.8rem;
     display: block;
     margin-bottom: 8px;
 }
- 
+
 .membro p {
     font-weight: 600;
     font-size: .95rem;
     margin-bottom: 4px;
 }
- 
- 
+
+
 .footer-copy {
-    color: rgba(255,255,255,.2);
+    color: rgba(255, 255, 255, .2);
     font-size: .78rem;
     letter-spacing: 2px;
 }
- 
+
 /*  ANIMAÇÕES  */
- 
+
 @keyframes fadeUp {
     from {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -509,9 +516,17 @@ footer h3 {
 }
 
 /* RESPONSIVO  */
- 
+
 @media (max-width: 900px) {
- 
+    .submenu {
+        position: static;
+        /* sai do absolute, flui no menu */
+        width: 100%;
+        border-radius: 10px;
+        margin-top: 8px;
+        right: auto;
+    }
+
     nav ul {
         display: none;
         flex-direction: column;
@@ -524,15 +539,15 @@ footer h3 {
         gap: 16px;
         text-align: center;
     }
- 
+
     nav ul.open {
         display: flex;
     }
- 
+
     .hamburger {
         display: block;
     }
- 
+
     header {
         flex-direction: column;
         justify-content: center;
@@ -540,45 +555,44 @@ footer h3 {
         padding: 0 6%;
         gap: 40px;
     }
- 
+
     .header-content h1 {
         font-size: 4.5rem;
     }
- 
+
     .stats-bar {
         flex-wrap: wrap;
         gap: 20px;
         padding: 30px 6%;
     }
- 
+
     .stat-divider {
         display: none;
     }
- 
+
     .section {
         flex-direction: column;
         text-align: center;
         padding: 100px 6%;
         gap: 50px;
     }
- 
+
     .text {
         max-width: 100%;
     }
- 
+
     .text h2 {
         font-size: 2rem;
     }
 
     .slideshow {
-    height: 30vh;
+        height: 30vh;
     }
 
     #text-quiz {
-    min-height: unset;
-    padding: 60px 6% 40px;
-    gap: 20px;
+        min-height: unset;
+        padding: 60px 6% 40px;
+        gap: 20px;
     }
 
 }
-

@@ -22,31 +22,38 @@ hamburger.addEventListener('click', () => {
     navUl.classList.toggle('open');
 });
 
-// fecha menu ao clicar num link
+// fecha menu ao clicar num link (EXCETO o botão de tema)
 navUl.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => navUl.classList.remove('open'));
+    link.addEventListener('click', (e) => {
+        // Se for o link "Tema", não fecha o menu
+        if (link.closest('.dropdown')) return;
+        navUl.classList.remove('open');
+    });
 });
-
 // mudança de cor da página 
-function mudarFundo(cor){
-    document.body.style.background=cor;
+function mudarFundo(cor) {
+    document.body.style.background = cor;
 }
 
 // dropdown tema
 const dropdown = document.querySelector('.dropdown');
-dropdown.addEventListener('click', (e) => {
+const dropdownLink = dropdown.querySelector('a');
+
+dropdownLink.addEventListener('click', (e) => {
+    e.preventDefault();
     e.stopPropagation();
     dropdown.classList.toggle('open');
 });
 
-document.addEventListener('click', () => {
-    dropdown.classList.remove('open');
+document.addEventListener('click', (e) => {
+    if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('open');
+    }
 });
-
 // validação formulário
 const form = document.getElementById('form-contato');
 
-form.addEventListener('submit', function(e){
+form.addEventListener('submit', function (e) {
     e.preventDefault();
 
     let valido = true;
@@ -58,30 +65,30 @@ form.addEventListener('submit', function(e){
 
     document.querySelectorAll('.erro').forEach(e => e.textContent = '');
 
-    if(nome.value.trim() === ''){
+    if (nome.value.trim() === '') {
         document.getElementById('erro-nome').textContent = 'Por favor, informe seu nome!';
         valido = false;
     }
 
-    if(email.value.trim() === ''){
+    if (email.value.trim() === '') {
         document.getElementById('erro-email').textContent = 'Por favor, informe seu e-mail!';
         valido = false;
-    } else if(!email.value.includes('@') | !email.value.includes('.')){
+    } else if (!email.value.includes('@') | !email.value.includes('.')) {
         document.getElementById('erro-email').textContent = 'E-mail inválido.';
         valido = false;
     }
 
-    if(assunto.value.trim() === ''){
+    if (assunto.value.trim() === '') {
         document.getElementById('erro-assunto').textContent = 'Por favor, informe o assunto!';
         valido = false;
     }
 
-    if(mensagem.value.trim() === ''){
+    if (mensagem.value.trim() === '') {
         document.getElementById('erro-mensagem').textContent = 'Por favor, informe uma mensagem!';
         valido = false;
     }
 
-    if(valido){
+    if (valido) {
         alert('Mensagem enviada com sucesso!');
         form.reset();
     }

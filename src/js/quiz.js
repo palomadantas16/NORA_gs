@@ -22,9 +22,13 @@ hamburger.addEventListener('click', () => {
     navUl.classList.toggle('open');
 });
 
-// fecha menu ao clicar num link
+// fecha menu ao clicar num link (EXCETO o botão de tema)
 navUl.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => navUl.classList.remove('open'));
+    link.addEventListener('click', (e) => {
+        // Se for o link "Tema", não fecha o menu
+        if (link.closest('.dropdown')) return;
+        navUl.classList.remove('open');
+    });
 });
 
 // mudança de cor da página 
@@ -34,9 +38,18 @@ function mudarFundo(cor){
 
 // dropdown tema
 const dropdown = document.querySelector('.dropdown');
-dropdown.addEventListener('click', (e) => {
+const dropdownLink = dropdown.querySelector('a');
+
+dropdownLink.addEventListener('click', (e) => {
+    e.preventDefault();
     e.stopPropagation();
     dropdown.classList.toggle('open');
+});
+
+document.addEventListener('click', (e) => {
+    if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('open');
+    }
 });
 
 /*========================================
